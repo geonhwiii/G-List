@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400,500,700|Cute+Font&display=swap');
+
+* {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-family: 'Cute Font', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  background: url('./mojave_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-position-x: relative
 }

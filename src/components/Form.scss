@@ -1,0 +1,44 @@
+.form {
+  border-bottom: 1px solid rgba($color: #eee, $alpha: 0.1);
+
+  .form-input {
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 90%;
+    line-height: center;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 3%;
+    transition: all 0.2s;
+
+    &:focus {
+      outline-color: rgba($color: #eee, $alpha: 0.3);
+      background: rgba($color: #fff, $alpha: 0.1);
+    }
+
+    &:hover {
+      background: rgba($color: #eee, $alpha: 0.1);
+    }
+  }
+
+  .form-submit {
+    display: none;
+  }
+
+  .form-button {
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10%;
+    outline: none;
+    background: rgba($color: #eee, $alpha: 0.3);
+    transition: all 0.1s;
+
+    &:hover {
+      background: rgba($color: #eee, $alpha: 0.5);
+    }
+  }
+}

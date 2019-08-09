@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "todo": "M2K MONAK",
+    "checked": true
+  },
+  {
+    "id": 2,
+    "todo": "M2K MONAK",
+    "checked": false
+  },
+  {
+    "id": 3,
+    "todo": "M2K MONAK",
+    "checked": false
+  }
+]

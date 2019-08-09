@@ -1,0 +1,22 @@
+.menu {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  font-size: 1.6rem;
+
+  li {
+    display: inline;
+    border-left: 1px solid #999;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:hover {
+      color: aqua;
+    }
+  }
+}

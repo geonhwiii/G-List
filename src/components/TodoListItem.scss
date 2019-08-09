@@ -1,0 +1,49 @@
+.todo-list-item {
+  border-bottom: 1px solid rgba($color: #eee, $alpha: 0.2);
+
+  .item-button {
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10%;
+    outline: none;
+    background: rgba($color: #eee, $alpha: 0.3);
+    transition: all 0.1s;
+
+    &:hover {
+      background: rgba($color: #eee, $alpha: 0.5);
+    }
+  }
+
+  .list-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgba($color: #eee, $alpha: 0.3);
+    }
+  }
+
+  .delete-button {
+    padding: 0.8rem;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    background-size: 80%;
+    transition: all 0.2;
+
+    &:hover {
+      background-image: url('../trash-red@48.png');
+    }
+  }
+}
