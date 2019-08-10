@@ -44,6 +44,7 @@ class App extends Component {
     });
   };
 
+  // TODO : 각 리스트 삭제 버튼 클릭 시 삭제 동작
   onDelete = e => {
     const { todoList } = this.state;
     const newTodoList = todoList.filter(list => list.id !== +e.target.id);
@@ -52,6 +53,7 @@ class App extends Component {
     });
   };
 
+  // TODO : 각 리스트 체크 버튼 클릭 시 체크 및 DONE 동작
   onCheck = e => {
     const { todoList } = this.state;
     const selectedIndex = todoList.findIndex(item => item.id === +e.target.id);
@@ -66,6 +68,7 @@ class App extends Component {
     });
   };
 
+  // TODO : 전체 체크 버튼 선택 동작
   onAllCheck = () => {
     const { todoList } = this.state;
     const copyTodos = [...todoList];
@@ -88,23 +91,20 @@ class App extends Component {
     });
   };
 
+  // TODO : 메뉴 버튼 클릭 시 리스트 이동.
   onShowList = e => {
     const { menuList } = this.state;
     e.target.parentNode.childNodes.forEach(list => (list.style.color = 'white'));
     let targetIndex = +e.target.id - 1;
     let seletedTodoList = menuList[targetIndex];
     this.onClearList();
-    seletedTodoList.forEach(list => {
-      this.setState(prev => ({
-        id: prev.id + 1,
-        text: prev.text,
-        checked: prev.checked,
-        todoList: [...prev.todoList, list]
-      }));
+    this.setState({
+      todoList: seletedTodoList
     });
     e.target.style.color = 'red';
   };
 
+  // TODO : 메뉴 버튼 더블 클릭 시 삭제
   onDoubleClick = e => {
     const { menuList } = this.state;
     const newMenuList = menuList.filter((_, i) => {
