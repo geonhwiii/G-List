@@ -14,30 +14,45 @@
     &:first-child {
       border-left: none;
     }
-
-    &:hover {
-      color: aqua;
-    }
   }
 }
 
-.add-menu {
-  position: fixed;
-  top: 18%;
-  left: 16.2%;
+@mixin item-button() {
   padding: 0.6rem;
   font-size: 1rem;
   font-weight: 600;
   border: none;
   outline: none;
   border-radius: 8px;
-  background: rgba(0, 0, 255, 0.8);
-  color: white;
   transition: all 0.2s;
+  color: white;
+}
+
+
+.add-menu {
+  @include item-button;
+  background: rgba(0, 0, 255, 0.8);
 
   &:hover {
     font-weight: 700;
-    background: darken($color: #00d, $amount: 10%);
+    background: darken($color: rgb(103, 103, 247), $amount: 10%);
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+
+}
+
+.new-menu {
+  @include item-button;
+  margin-left: -53px;
+  margin-right: 5px;
+  background: rgba(199, 164, 11, 0.8);
+
+  &:hover {
+    font-weight: 700;
+    background: darken($color: rgba(215, 243, 55, 0.836), $amount: 10%);
   }
 
   &:active {

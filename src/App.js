@@ -76,19 +76,58 @@ class App extends Component {
   };
 
   onAdd = () => {
-    const { menuList, todoList } = this.state;
+    this.setState(prev => ({
+      menuList: [...prev.menuList, prev.todoList]
+    }));
+    this.onClearList();
+  };
+
+  onClearList = () => {
     this.setState({
-      menuList: [...menuList, todoList]
+      todoList: []
+    });
+  };
+
+  onShowList = e => {
+    const { menuList } = this.state;
+    e.target.parentNode.childNodes.forEach(list => (list.style.color = 'white'));
+    let targetIndex = +e.target.id - 1;
+    let seletedTodoList = menuList[targetIndex];
+    this.onClearList();
+    seletedTodoList.forEach(list => {
+      this.setState(prev => ({
+        id: prev.id + 1,
+        text: prev.text,
+        checked: prev.checked,
+        todoList: [...prev.todoList, list]
+      }));
+    });
+    e.target.style.color = 'red';
+  };
+
+  onDoubleClick = e => {
+    const { menuList } = this.state;
+    const newMenuList = menuList.filter((_, i) => {
+      return i + 1 !== +e.target.id;
+    });
+    this.setState({
+      menuList: newMenuList
     });
   };
 
   render() {
     const { text, todoList, menuList } = this.state;
-    const { onChange, onSubmit, onDelete, onCheck, onAllCheck, onAdd } = this;
+    const { onChange, onSubmit, onDelete, onCheck, onAllCheck, onAdd, onShowList, onClearList, onDoubleClick } = this;
     return (
       <div className="App">
         <Title />
-        <Menu onAdd={onAdd} menuList={menuList} />
+        <Menu
+          onAdd={onAdd}
+          menuList={menuList}
+          onShowList={onShowList}
+          onClear={onClearList}
+          onDoubleClick={onDoubleClick}
+        />
         <Form onText={text} onChange={onChange} onSubmit={onSubmit} onAllCheck={onAllCheck} />
         <TodoList onCheck={onCheck} todoList={todoList} onDelete={onDelete} />
       </div>
@@ -105,7 +144,10 @@ App.propTypes = {
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   onCheck: PropTypes.func,
-  onAdd: PropTypes.func
+  onAdd: PropTypes.func,
+  onShowList: PropTypes.func,
+  onClearList: PropTypes.func,
+  onDoubleClick: PropTypes.func
 };
 
 export default App;
