@@ -4,6 +4,7 @@
   .item-button {
     width: 20px;
     height: 20px;
+    margin-top: 20px;
     margin-bottom: -5px;
     margin-right: 10px;
     border: none;
@@ -11,9 +12,19 @@
     outline: none;
     background: rgba($color: #eee, $alpha: 0.3);
     transition: all 0.1s;
+    cursor: pointer;
 
     &:hover {
-      background: rgba($color: #eee, $alpha: 0.5);
+      background: darken($color: #eee, $amount: 10%);
+    }
+  }
+
+  .checked {
+    background: blue;
+    margin-left: 1rem;
+
+    &:hover {
+      background: lighten($color: #00f, $amount: 10%);
     }
   }
 
@@ -23,10 +34,11 @@
     padding: 1rem;
     margin-right: 0.5rem;
     border-radius: 10px;
-    transition: all 0.2s;
+    transition: all 0.5s;
 
     &:hover {
-      background: rgba($color: #eee, $alpha: 0.3);
+      font-size: 1.4rem;
+      color: lighten($color: #00f, $amount: 10%)
     }
   }
 
@@ -46,4 +58,8 @@
       background-image: url('../trash-red@48.png');
     }
   }
+}
+
+.checked {
+  color: darken($color: rgba(45, 111, 252, 0.795), $amount: 10%);
 }
